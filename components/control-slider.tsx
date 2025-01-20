@@ -1,7 +1,4 @@
-//import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
-import { NumberInput } from '@/components/number-input';
-//import { Input } from '@/components/ui/input';
 import type { ControlSliderProps } from '@/types/blob-generator';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import {

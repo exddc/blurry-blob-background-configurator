@@ -21,7 +21,7 @@ export function getDefaultConfig(): BlobConfig {
     speed: 5,
     distance: 100,
     backgroundColor: "#ffffff",
-    heading: "Your Heading Here",
+    heading: "Animated Blurry Blob Background",
     colors: ["#F76363", "#3D65F5", "#C11A1A", "#002AC4"],
     randomizeColors: false,
     gradientType: "conic",

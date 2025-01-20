@@ -17,9 +17,7 @@ import { ShareButton } from './share-button';
 import { ColorInput } from './color-input';
 import { generateCode } from '@/lib/code-generator';
 import { useToast } from '@/hooks/use-toast';
-import { cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'motion/react';
-import Link from 'next/link';
 
 export function ControlPanel({
     config,

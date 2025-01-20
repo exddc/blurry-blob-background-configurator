@@ -7,7 +7,6 @@ import { Toaster } from '@/components/ui/toaster';
 import type { BlobConfig } from '@/types/blob-generator';
 import { decodeConfig, getDefaultConfig } from '@/lib/url-helpers';
 import { useSearchParams } from 'next/navigation';
-import Link from 'next/link';
 
 export function BlobGenerator() {
     const [config, setConfig] = useState<BlobConfig>({
@@ -47,20 +46,6 @@ export function BlobGenerator() {
                 />
             </div>
             <Toaster />
-            <div className="fixed left-4 bottom-4 flex flex-col">
-                <Link
-                    href="https://timoweiss.me"
-                    className="text-xs font-medium text-black/80 hover:underline"
-                >
-                    Built by Timo Weiss
-                </Link>
-                <Link
-                    href="https://gotdoneapp.com"
-                    className="text-xs font-medium text-black/80 hover:underline"
-                >
-                    Also check out GotDone
-                </Link>
-            </div>
         </div>
     );
 }
