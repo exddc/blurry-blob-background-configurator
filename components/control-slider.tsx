@@ -35,7 +35,7 @@ export function ControlSlider({
                     <div className="space-y-2">
                         <Group className="relative inline-flex h-9 w-full items-center overflow-hidden whitespace-nowrap rounded-lg border border-input text-sm shadow-sm shadow-black/5 transition-shadow data-[focus-within]:border-ring data-[disabled]:opacity-50 data-[focus-within]:outline-none data-[focus-within]:ring-[3px] data-[focus-within]:ring-ring/20">
                             <Input className="bg-background px-3 py-2 tabular-nums text-foreground focus:outline-none w-full" />
-                            <span className="text-muted-foreground/80 text-sm px-3">
+                            <span className="text-muted-foreground/80 text-sm px-3 bg-background h-full flex items-center">
                                 {unit}
                             </span>
                             <div className="flex h-[calc(100%+2px)] flex-col">

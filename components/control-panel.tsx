@@ -34,6 +34,10 @@ export function ControlPanel({
                 title: 'Copied!',
                 description: 'Code has been copied to clipboard',
             });
+            // If on mobile device, show alert instead
+            if (window.matchMedia('(max-width: 640px)').matches) {
+                alert('Code copied to clipboard');
+            }
         } catch (err) {
             console.error('Failed to copy code:', err);
         }

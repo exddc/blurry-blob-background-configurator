@@ -20,6 +20,10 @@ export function ShareButton({ config }: ShareButtonProps) {
                 title: 'Link copied!',
                 description: 'Share URL has been copied to clipboard',
             });
+            // If on mobile device, show alert instead
+            if (window.matchMedia('(max-width: 640px)').matches) {
+                alert('Link copied to clipboard');
+            }
         } catch (err) {
             console.error('Failed to copy URL:', err);
         }
