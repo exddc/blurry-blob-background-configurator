@@ -25,7 +25,9 @@ export function getDefaultConfig(): BlobConfig {
     colors: ["#F76363", "#3D65F5", "#C11A1A", "#002AC4"],
     randomizeColors: false,
     gradientType: "conic",
-    codeType: "react"
+    codeType: "react",
+    opacity: 100,
+    yDistance: 0,
   }
 }
 

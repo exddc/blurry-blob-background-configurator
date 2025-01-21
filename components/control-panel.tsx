@@ -152,6 +152,21 @@ export function ControlPanel({
                                 />
 
                                 <ControlSlider
+                                    label="Opacity"
+                                    value={config.opacity}
+                                    onChange={(value) =>
+                                        onConfigChange({
+                                            ...config,
+                                            opacity: value,
+                                        })
+                                    }
+                                    min={0}
+                                    max={100}
+                                    step={1}
+                                    unit="%"
+                                />
+
+                                <ControlSlider
                                     label="Blob Size"
                                     value={config.size}
                                     onChange={(value) =>
@@ -188,6 +203,21 @@ export function ControlPanel({
                                         onConfigChange({
                                             ...config,
                                             distance: value,
+                                        })
+                                    }
+                                    min={0}
+                                    max={200}
+                                    step={5}
+                                    unit="px"
+                                />
+
+                                <ControlSlider
+                                    label="Blob Vertical Distance"
+                                    value={config.yDistance}
+                                    onChange={(value) =>
+                                        onConfigChange({
+                                            ...config,
+                                            yDistance: value,
                                         })
                                     }
                                     min={0}
