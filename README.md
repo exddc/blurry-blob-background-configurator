@@ -2,6 +2,10 @@
 
 This simple web app generates a animated blurry blob background effect. The user can adjust the number of blobs, the size of the blobs, the speed of the animation, and the blur effect. The user can also download the generated code for React and Vue codebases or share the generated background via a link.
 
+
+[![Demo](https://static.timoweiss.me/Animated-Blurry-Blob-Background-Generator-01-21-2025_02_16_PM.png)](https://static.timoweiss.me/Animated-Blurry-Blob-Background-Generator.mp4) 
+
+
 ## Getting Started
 
 First, run the development server:
