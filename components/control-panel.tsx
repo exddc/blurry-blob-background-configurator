@@ -18,6 +18,8 @@ import { ColorInput } from './color-input';
 import { generateCode } from '@/lib/code-generator';
 import { useToast } from '@/hooks/use-toast';
 import { AnimatePresence, motion } from 'motion/react';
+import { userAgent } from 'next/server';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 
 export function ControlPanel({
     config,
@@ -26,6 +28,8 @@ export function ControlPanel({
     onToggleCollapse,
 }: ControlPanelProps) {
     const { toast } = useToast();
+    const { device } = userAgent({ headers: new Headers() });
+    const isMobile = device?.type === 'mobile';
 
     const copyToClipboard = async () => {
         try {
@@ -35,7 +39,7 @@ export function ControlPanel({
                 description: 'Code has been copied to clipboard',
             });
             // If on mobile device, show alert instead
-            if (window.matchMedia('(max-width: 640px)').matches) {
+            if (isMobile) {
                 alert('Code copied to clipboard');
             }
         } catch (err) {
@@ -157,7 +161,7 @@ export function ControlPanel({
                                         })
                                     }
                                     min={100}
-                                    max={500}
+                                    max={300}
                                     step={10}
                                     unit="px"
                                 />
@@ -172,7 +176,7 @@ export function ControlPanel({
                                         })
                                     }
                                     min={100}
-                                    max={500}
+                                    max={300}
                                     step={10}
                                     unit="px"
                                 />
@@ -187,7 +191,7 @@ export function ControlPanel({
                                         })
                                     }
                                     min={0}
-                                    max={300}
+                                    max={200}
                                     step={5}
                                     unit="px"
                                 />
@@ -325,6 +329,51 @@ export function ControlPanel({
 
                         <div className="p-4 border-t border-white/40">
                             <div className="space-y-2">
+                                <RadioGroup
+                                    className="grid grid-cols-3 gap-2"
+                                    defaultValue="react"
+                                    value={config.codeType}
+                                    onValueChange={(value) =>
+                                        onConfigChange({
+                                            ...config,
+                                            codeType: value,
+                                        })
+                                    }
+                                >
+                                    <label className="relative flex cursor-pointer flex-col items-center gap-3 rounded-lg border border-input h-7 px-4 py-1.5 text-center shadow-sm shadow-black/5 outline-offset-2 transition-all has-[[data-disabled]]:cursor-not-allowed has-[[data-state=checked]]:border-black/20 has-[[data-state=checked]]:shadow-inner has-[[data-state=checked]]:bg-neutral-50 has-[[data-disabled]]:opacity-50 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70">
+                                        <RadioGroupItem
+                                            id="react-code"
+                                            value="react"
+                                            className="sr-only after:absolute after:inset-0"
+                                            disabled={false}
+                                        />
+                                        <p className="text-sm font-medium leading-none text-foreground">
+                                            React
+                                        </p>
+                                    </label>
+                                    <label className="relative flex cursor-pointer flex-col items-center gap-3 rounded-lg border border-input h-7 px-4 py-1.5 text-center shadow-sm shadow-black/5 outline-offset-2 transition-colors has-[[data-disabled]]:cursor-not-allowed has-[[data-state=checked]]:border-black/20 has-[[data-state=checked]]:shadow-inner has-[[data-state=checked]]:bg-neutral-50 has-[[data-disabled]]:opacity-50 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70">
+                                        <RadioGroupItem
+                                            id="vue-code"
+                                            value="vue"
+                                            className="sr-only after:absolute after:inset-0"
+                                            disabled={false}
+                                        />
+                                        <p className="text-sm font-medium leading-none text-foreground">
+                                            Vue
+                                        </p>
+                                    </label>
+                                    <label className="relative flex cursor-pointer flex-col items-center gap-3 rounded-lg border border-input h-7 px-4 py-1.5 text-center shadow-sm shadow-black/5 outline-offset-2 transition-colors has-[[data-disabled]]:cursor-not-allowed has-[[data-state=checked]]:border-black/20 has-[[data-state=checked]]:shadow-inner has-[[data-state=checked]]:bg-neutral-50 has-[[data-disabled]]:opacity-50 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ring/70">
+                                        <RadioGroupItem
+                                            id="svelte-code"
+                                            value="svelte"
+                                            className="sr-only after:absolute after:inset-0"
+                                            disabled={true}
+                                        />
+                                        <p className="text-sm font-medium leading-none text-foreground">
+                                            Svelte
+                                        </p>
+                                    </label>
+                                </RadioGroup>
                                 <Button
                                     onClick={copyToClipboard}
                                     variant="glass-light"

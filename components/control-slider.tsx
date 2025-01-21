@@ -31,6 +31,7 @@ export function ControlSlider({
                     minValue={min}
                     maxValue={max}
                     step={step}
+                    aria-label={label}
                 >
                     <div className="space-y-2">
                         <Group className="relative inline-flex h-9 w-full items-center overflow-hidden whitespace-nowrap rounded-lg border border-input text-sm shadow-sm shadow-black/5 transition-shadow data-[focus-within]:border-ring data-[disabled]:opacity-50 data-[focus-within]:outline-none data-[focus-within]:ring-[3px] data-[focus-within]:ring-ring/20">

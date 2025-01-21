@@ -1,13 +1,13 @@
 import '@/styles/globals.css';
 import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: 'Blob Generator',
-    description:
-        'Generate beautiful gradient blob backgrounds for your website',
+    title: 'Animated Blurry Blob Background Generator',
+    description: 'Generate animated blurry blob backgrounds',
 };
 
 export default function RootLayout({
@@ -18,11 +18,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={inter.className}>{children}</body>
-            <script
+            <Script
                 defer
                 data-domain="blurry-blob-background.timoweiss.me"
                 src="https://plausible.io/js/script.js"
-            ></script>
+            ></Script>
         </html>
     );
 }

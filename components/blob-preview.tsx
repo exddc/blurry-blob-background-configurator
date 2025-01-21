@@ -29,7 +29,7 @@ export function BlobPreview({ config }: { config: BlobConfig }) {
                     ),
                     width: `${config.size}px`,
                     height: '100%',
-                    marginLeft: i === 0 ? 0 : `-${config.distance}px`,
+                    marginLeft: i === 0 ? 0 : `${config.distance}px`,
                     animation: `spin ${
                         config.speed * (i + 1)
                     }s linear infinite`,

@@ -15,16 +15,17 @@ export function decodeConfig(encoded: string): BlobConfig {
 export function getDefaultConfig(): BlobConfig {
   return {
     numBlobs: 2,
-    blur: 120,
-    size: 300,
-    height: 150,
+    blur: 80,
+    size: 170,
+    height: 170,
     speed: 5,
-    distance: 100,
+    distance: 50,
     backgroundColor: "#ffffff",
     heading: "Animated Blurry Blob Background",
     colors: ["#F76363", "#3D65F5", "#C11A1A", "#002AC4"],
     randomizeColors: false,
     gradientType: "conic",
+    codeType: "react"
   }
 }
 
