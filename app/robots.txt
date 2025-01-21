@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow:
+
+Sitemap: https://blurry-blob-background.timoweiss.me/sitemap.xml

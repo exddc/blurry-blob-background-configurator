@@ -29,6 +29,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         creator: '@timooweiss',
     },
+    icons: '/icon.png',
 };
 
 export default function RootLayout({
