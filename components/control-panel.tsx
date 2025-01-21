@@ -331,7 +331,6 @@ export function ControlPanel({
                             <div className="space-y-2">
                                 <RadioGroup
                                     className="grid grid-cols-3 gap-2"
-                                    defaultValue="react"
                                     value={config.codeType}
                                     onValueChange={(value) =>
                                         onConfigChange({
