@@ -13,6 +13,8 @@ export interface BlobConfig {
   randomizeColors: boolean
   gradientType: GradientType
   codeType: string
+  opacity: number
+  yDistance: number
 }
 
 export interface ControlPanelProps {
