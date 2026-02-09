@@ -42,8 +42,8 @@ export default function RootLayout({
             <body className={inter.className}>{children}</body>
             <Script
                 defer
-                data-domain="blurry-blob-background.timoweiss.me"
-                src="https://plausible.io/js/script.js"
+                src="https://analytics.timoweiss.me/script.js"
+                data-website-id="3af599a2-2054-48fc-a183-51f7b333f820"
             ></Script>
         </html>
     );
